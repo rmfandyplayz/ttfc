@@ -14,6 +14,7 @@ public class Requirements : MonoBehaviour
     private void Start()
     {
         ReadData();
+        FindObjectOfType<RequirementsHandler>().SetUpRequirementButton(this);
     }
 
 
@@ -40,11 +41,18 @@ public class Requirements : MonoBehaviour
             {
                 Requirement requirement = new Requirement(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9]);
                 requirements.Add(requirement);
+                //Debug.LogError(requirement);
             }
-
         }
     }
 }
+
+/*
+
+list[0][1][x]
+
+
+ * */
 
 [System.Serializable]
 public class Requirement
@@ -104,4 +112,10 @@ public class Requirement
         if (none) answerTypes.Add(AnswerType.none);
         return answerTypes.ToArray();
     }
+
+    public override string ToString()
+    {
+        return $"{id}, {rank}, {requirementNumber}, {descriptionText}, {answerType}, {answer}, {hasImage}, {imageURL}, {hasVideo}, {videoURL}";
+    }
+
 }
