@@ -10,27 +10,27 @@ public class RequirementButton : MonoBehaviour
     RequirementsHandler requirementsHandler;
     public float dropdownLength = 800;
     public float dropdownSpeed = 100;
-    //temp
-    public bool open = false;
+    public bool buttonClickable = true;
 
     public void Setup(Requirement requirement, int reqNum, RequirementsHandler requirementsHandler)
     {
+        buttonClickable = true;
         this.requirementsHandler = requirementsHandler;
-        reqNumText.text = $"Req. {reqNum}";
+        reqNumText.text = requirement.ToString();
     }
     
 
     public void ButtonClicked()
     {
-        if (!open)
+        if (buttonClickable == true)
         {
             StartCoroutine(DropDownMovement(-dropdownLength));
-            open = true;
+            buttonClickable = false;
         }
         else
         {
             StartCoroutine(DropDownMovement(dropdownLength));
-            open = false;
+            buttonClickable = true;
         }
     }
     

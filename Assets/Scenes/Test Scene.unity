@@ -400,9 +400,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reqNumText: {fileID: 963127498}
-  dropdownLength: 400
-  dropdownSpeed: 100
-  open: 0
+  dropdownLength: 200
+  dropdownSpeed: 750
+  buttonClickable: 1
 --- !u!1 &460160280
 GameObject:
   m_ObjectHideFlags: 0
