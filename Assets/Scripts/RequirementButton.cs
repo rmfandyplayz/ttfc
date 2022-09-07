@@ -60,14 +60,18 @@ public class RequirementButton : MonoBehaviour
 
     public IEnumerator DropDownMovement(float length)
     {
-        float speed = dropdownSpeed;
-        if (length < 0)
-        {
-            speed = -dropdownSpeed;
-        }
+        float lengthMax = length;
+        //x^2
 
         while (Mathf.Abs(length) > 0)
         {
+            float x = Mathf.Abs(length / lengthMax) - 1;
+            float speed = dropdownSpeed;
+            if (length < 0)
+            {
+                speed = -dropdownSpeed;
+            }
+
             float step = speed * Time.deltaTime;
             if (length > 0 && step > length || length < 0 && step < length)
             {

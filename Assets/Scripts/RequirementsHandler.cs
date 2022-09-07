@@ -7,9 +7,11 @@ public class RequirementsHandler : MonoBehaviour
     public Requirements requirements;
     public RequirementButton prefabRequirementButton;
     List<RequirementButton> requirementButtons = new List<RequirementButton>();
+    public Transform requirementButtonCanvas;
+    public RectTransform content;
     private float initialOffset;
     public float offset;
-    public Transform requirementButtonCanvas;
+    public float contentSize;
 
     private void Start()
     {
@@ -36,9 +38,11 @@ public class RequirementsHandler : MonoBehaviour
             newButton.Setup(requirement, reqNum, this);
             reqNum++;
         }
+        contentSize = initialOffset - (offset * (reqNum - 1));
+        ResizeContent();
     }
 
-    public void MoveButtons(RequirementButton buttonStart, float step)
+    public void MoveButtons(RequirementButton buttonStart, float step) //How much the button is being changed (step)
     {
         bool moving = false;
         for(int i = 0; i < requirements.requirements.Count; i++)
@@ -52,5 +56,13 @@ public class RequirementsHandler : MonoBehaviour
                 requirementButtons[i].GetComponent<RectTransform>().localPosition += step * Vector3.up;
             }
         }
+        contentSize += step;
+        ResizeContent();
     }
+
+    public void ResizeContent()
+    {
+        content.sizeDelta = new Vector2(content.sizeDelta.x, -contentSize);
+    }
+
 }
