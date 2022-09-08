@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00009248778}
   m_SizeDelta: {x: 0, y: 1730.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &160008360
@@ -275,6 +275,7 @@ MonoBehaviour:
   prefabRequirementButton: {fileID: 420900456}
   requirementButtonCanvas: {fileID: 62186915}
   content: {fileID: 62186915}
+  imageHandler: {fileID: 11400000, guid: 6c11bc9a735114748a274dde90922541, type: 2}
   offset: 166
   contentSize: 0
 --- !u!4 &270663432
@@ -373,7 +374,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1753310084}
   m_HandleRect: {fileID: 1753310083}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -735,6 +736,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1735574745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7138853495172945601, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+  m_PrefabInstance: {fileID: 7138853495155302870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1753310082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,5 +1061,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7138853494770880446, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: answerImage
+      value: 
+      objectReference: {fileID: 1735574745}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}

@@ -9,6 +9,7 @@ public class RequirementsHandler : MonoBehaviour
     List<RequirementButton> requirementButtons = new List<RequirementButton>();
     public Transform requirementButtonCanvas;
     public RectTransform content;
+    public RequirementImageHandler imageHandler;
     private float initialOffset;
     public float offset;
     public float contentSize;
@@ -36,6 +37,10 @@ public class RequirementsHandler : MonoBehaviour
             requirementButtons.Add(newButton);
             newButton.GetComponent<RectTransform>().localPosition = new Vector3(0, initialOffset -(offset * (reqNum - 1)), 0);
             newButton.Setup(requirement, reqNum, this);
+            if(requirement.hasImage)
+            {
+                newButton.answerImage.sprite = imageHandler.GetImage(requirement.images[0]);
+            }
             reqNum++;
         }
         contentSize = initialOffset - (offset * (reqNum - 1));

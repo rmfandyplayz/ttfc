@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using UnityEngine;
+using System.Linq;
+using System.Runtime.Serialization.Json;
 
 public class Requirements : MonoBehaviour
 {
@@ -39,7 +41,7 @@ public class Requirements : MonoBehaviour
             arrays.Add(array);
             if (array[0] != "id")
             {
-                Requirement requirement = new Requirement(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9]);
+                Requirement requirement = new Requirement(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10]);
                 requirements.Add(requirement);
                 //Debug.LogError(requirement);
             }
@@ -61,6 +63,7 @@ public class Requirement
     public string rank;
     public string requirementNumber;
     public string descriptionText;
+    public List<string> images = new List<string>();
     public enum AnswerType
     {
         text,
@@ -75,7 +78,7 @@ public class Requirement
     public bool hasVideo;
     public string videoURL;
 
-    public Requirement(string id, string rank, string requirementNumber, string descriptionText, string answerType, string answer, string hasImage, string imageURL, string hasVideo, string videoURL)
+    public Requirement(string id, string rank, string requirementNumber, string descriptionText, string answerType, string answer, string hasImage, string imageURL, string hasVideo, string videoURL, string images)
     {
         this.id = id;
         this.rank = rank;
@@ -87,6 +90,12 @@ public class Requirement
         this.imageURL = imageURL;
         this.hasVideo = hasVideo == "yes" ? true : false;
         this.videoURL = videoURL;
+
+        if (this.hasImage)
+        {
+            string[] imageArray = images.Split(' ');
+            this.images = new List<string>(imageArray);
+        }
     }
 
     private AnswerType[] GetAnswerType(string answerType)
