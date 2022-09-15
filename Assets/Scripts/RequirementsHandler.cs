@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.RestService;
 using UnityEngine;
 
 public class RequirementsHandler : MonoBehaviour
@@ -37,10 +38,6 @@ public class RequirementsHandler : MonoBehaviour
             requirementButtons.Add(newButton);
             newButton.GetComponent<RectTransform>().localPosition = new Vector3(0, initialOffset -(offset * (reqNum - 1)), 0);
             newButton.Setup(requirement, reqNum, this);
-            if(requirement.hasImage)
-            {
-                newButton.answerImage.sprite = imageHandler.GetImage(requirement.images[0]);
-            }
             reqNum++;
         }
         contentSize = initialOffset - (offset * (reqNum - 1));
@@ -70,4 +67,8 @@ public class RequirementsHandler : MonoBehaviour
         content.sizeDelta = new Vector2(content.sizeDelta.x, -contentSize);
     }
 
+    public void RequirementCompleted(string reqID, bool completed)
+    {
+        PlayerPrefs.SetString(reqID, completed? "yes" : "no");
+    }
 }
