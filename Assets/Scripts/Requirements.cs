@@ -9,7 +9,7 @@ using System.Runtime.Serialization.Json;
 public class Requirements : MonoBehaviour
 {
     public string pathToData = @"Resources/Requirements.tsv";
-    public TextAsset data;
+    //public TextAsset data;
     public List<Requirement> requirements = new List<Requirement>();
 
     public void ReadData(Requirement.Rank rank)
@@ -38,6 +38,27 @@ public class Requirements : MonoBehaviour
             }
         }
     }
+
+    public float RankPercent(Requirement.Rank rank)
+    {
+        float percentCompleted = 0;
+        int completedRequirements = 0;
+        ReadData(rank);
+        foreach(Requirement requirement in requirements)
+        {
+            if(PlayerPrefs.GetString(requirement.id, "no") == "yes")
+            {
+                completedRequirements++;
+            }
+        }
+        percentCompleted = (float)completedRequirements / requirements.Count;
+        return percentCompleted;
+    }
+
+
+
+
+
 }
 
 /*
