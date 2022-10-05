@@ -14,6 +14,7 @@ public class Requirements : MonoBehaviour
 
     public void ReadData(Requirement.Rank rank)
     {
+        requirements.Clear();
         string relativePathToData;
         if(Application.isEditor)
         {
@@ -54,11 +55,6 @@ public class Requirements : MonoBehaviour
         percentCompleted = (float)completedRequirements / requirements.Count;
         return percentCompleted;
     }
-
-
-
-
-
 }
 
 /*
