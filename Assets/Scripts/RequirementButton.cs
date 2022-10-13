@@ -104,7 +104,7 @@ public class RequirementButton : MonoBehaviour
         while (Mathf.Abs(length) > 0)
         {
             //Objective: Use the curve variable name to determine the speed that the function should go in
-            float x = Mathf.Abs((-length + lengthMax) / lengthMax);
+            float x = Mathf.Abs((-length + lengthMax) / lengthMax); //When moving from left to right, x determines how far you have moved. (Time)
             float speed = 0;
             if (lengthMax < 0)
             {

@@ -1,5 +1,8 @@
 ﻿
+using UnityEditor.PackageManager;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public static class Utility
 {
@@ -28,6 +31,10 @@ public static class Utility
         return rankPercent;
     }
 
+    /// <summary>
+    /// Gets the rank percent from what has been stored.
+    /// </summary>
+    /// <returns></returns>
     public static RankPercent GetRankPercent()
     {
         int lastRank = PlayerPrefs.GetInt("rank", 0);
@@ -42,10 +49,26 @@ public static class Utility
         int lastRank = PlayerPrefs.GetInt("rank", 0);
         float oldPercent = PlayerPrefs.GetFloat("percentComplete", 0);
 
-        if (rank >= lastRank && percentComplete > oldPercent)
+        if (rank > lastRank || rank == lastRank && percentComplete > oldPercent)
         {
             PlayerPrefs.SetFloat("percentComplete", percentComplete);
             PlayerPrefs.SetInt("rank", rank);
         }
     }
+
+    /// <summary>
+    /// Returns the velocity of an object given the easing, value which can be position, rotation, size, length, etc. and the maximum amount of that value.
+    /// </summary>
+    /// <param name="animation"></param>
+    /// <param name="maxValue"></param>
+    /// <param name="value"></param>
+    public static float TweenObject(AnimationCurve easing, float maxValue, float value)
+    {
+        //Calculate the velocity
+        float x = Mathf.Abs((-value + maxValue) / maxValue); //When moving from left to right, x determines how far you have moved. (Time)
+        float speed = 0;
+        speed = easing.Evaluate(x);
+        return speed;
+    }
+
 }
