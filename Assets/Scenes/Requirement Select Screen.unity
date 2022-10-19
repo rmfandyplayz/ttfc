@@ -465,7 +465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathToData: Resources/Requirements.tsv
-  data: {fileID: 0}
   requirements: []
 --- !u!4 &460160282
 Transform:
@@ -1485,30 +1484,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 62186915}
     m_Modifications:
-    - target: {fileID: 3473314365092696787, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 310
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473314365092696787, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138940166320367337, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3820755
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138940166320367337, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_Color.g
-      value: 0.56728613
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138940166320367337, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138853494480086688, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7138853494770880434, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1601,13 +1576,5 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7138853494770880446, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: completedIcon
-      value: 
-      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 7138853494770880446, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: incompleteIcon
-      value: 
-      objectReference: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}

@@ -67,6 +67,18 @@ public class RequirementButton : MonoBehaviour
             answerImage.enabled = false;
         }
 
+        if (requirement.hasVideo)
+        {
+            videoURL = requirement.videoURL;
+            float videoSize = videoButton.GetComponent<RectTransform>().rect.height;
+            videoButton.GetComponent<Transform>().localPosition = new Vector3(0, -dropdownLength - textBuffer, 0);
+            dropdownLength += videoSize + textBuffer;
+        }
+        else
+        {
+            videoButton.gameObject.SetActive(false);
+        }
+
         string completed = PlayerPrefs.GetString(requirement.id, "no");
         SetCompleted(completed);
 
@@ -93,6 +105,12 @@ public class RequirementButton : MonoBehaviour
 
         }
 
+    }
+
+    string videoURL;
+    public void VideoButtonClicked()
+    {
+        Application.OpenURL(videoURL);
     }
 
 

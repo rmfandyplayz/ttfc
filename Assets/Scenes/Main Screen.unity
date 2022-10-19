@@ -1378,26 +1378,54 @@ MonoBehaviour:
   - Life
   - Eagle
   barGrowSpeed: 1
+  debugResetRankPercent: 0
   easingCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.15
+      inSlope: 0.4328171
+      outSlope: 0.4328171
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.6102204
+    - serializedVersion: 3
+      time: 0.26596153
+      value: 0.4763019
+      inSlope: 2.3985882
+      outSlope: 2.3985882
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13463345
+      outWeight: 0.019939365
+    - serializedVersion: 3
+      time: 0.73025733
+      value: 0.4659341
+      inSlope: -2.2864804
+      outSlope: -2.2864804
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.0696203
+    - serializedVersion: 3
+      time: 0.9130866
+      value: 0.1585029
+      inSlope: -0.53899485
+      outSlope: -0.53899485
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.27630562
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
+      value: 0.15
+      inSlope: 0.050795574
+      outSlope: 0.050795574
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.22415958
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

@@ -11,12 +11,20 @@ public class LevelBar : MonoBehaviour
     public TextMeshProUGUI rankText, nextRankText, levelPercentText;
     public Requirements requirements;
     public Sprite[] rankImages;
-    public string[] rankNames = {"No rank", "Scout", "Tenderfoot", "Second Class", "First Class", "Star", "Life", "Eagle"};
+    public string[] rankNames = { "No rank", "Scout", "Tenderfoot", "Second Class", "First Class", "Star", "Life", "Eagle" };
 
     public float barGrowSpeed = 50; //how fast the bar fills up
 
+
+    public bool debugResetRankPercent = false;
+
+
     private void Start()
     {
+        if(debugResetRankPercent == true)
+        {
+            Utility.SetRankPercent(0, 0, true);
+        }
         CheckForBarAnimation();
         /*
          * Check if we increased in percentage
@@ -38,20 +46,25 @@ public class LevelBar : MonoBehaviour
         Utility.RankPercent currentRankPercent = Utility.GetCurrentRankPercent(requirements); //New percent
         Utility.RankPercent oldRankPercent = Utility.GetRankPercent(); //Old percent
 
-        if(currentRankPercent.rank < oldRankPercent.rank || currentRankPercent.percentage < oldRankPercent.percentage) //Decrease in rank
+        //Debug.Log($"currentRank:{currentRankPercent.rank} | {currentRankPercent.percentage}  oldRank: {oldRankPercent.rank} | {oldRankPercent.percentage}");
+
+        if (currentRankPercent.rank < oldRankPercent.rank || currentRankPercent.rank == oldRankPercent.rank && currentRankPercent.percentage < oldRankPercent.percentage) //Decrease in rank
         {
+            //Debug.Log("Decrease");
             SetLevelBar(currentRankPercent.rank, currentRankPercent.percentage);
         }
-        else if(currentRankPercent.rank > oldRankPercent.rank || currentRankPercent.rank == oldRankPercent.rank && currentRankPercent.percentage > oldRankPercent.percentage) //Increase in rank or percentage within the same rank.
+        else if (currentRankPercent.rank > oldRankPercent.rank || currentRankPercent.rank == oldRankPercent.rank && currentRankPercent.percentage > oldRankPercent.percentage) //Increase in rank or percentage within the same rank.
         {
+            //Debug.Log("Increase");
             StartCoroutine(AnimateLevelBar(oldRankPercent, currentRankPercent));
         }
         else //No Change
         {
+            //Debug.Log("No Change");
             SetLevelBar(oldRankPercent.rank, oldRankPercent.percentage);
         }
-        
-        
+
+
 
     }
 
@@ -64,7 +77,7 @@ public class LevelBar : MonoBehaviour
     /// <param name="percentComplete"></param>
     void SetLevelBar(int rank, float percentComplete)
     {
-        if(rank == 7)
+        if (rank == 7)
         {
             fillImage.fillAmount = 1;
         }
@@ -79,13 +92,13 @@ public class LevelBar : MonoBehaviour
             fillImage.fillAmount = percentComplete;
         }
 
-        if(rank == 0)
+        if (rank == 0)
         {
             rankText.text = rankNames[rank];
             nextRankText.text = rankNames[rank + 1];
             nextRankImage.sprite = rankImages[rank + 1];
         }
-        else if(rank < 7)
+        else if (rank < 7)
         {
             rankText.text = rankNames[rank];
             nextRankText.text = rankNames[rank + 1];
@@ -110,10 +123,10 @@ public class LevelBar : MonoBehaviour
         {
             maxValue = 1;
         }
-        while(value < maxValue)
+        while (value < maxValue)
         {
             float fillAmount = speed * Utility.TweenObject(easingCurve, maxValue, value) * Time.deltaTime;
-            if(value + fillAmount < maxValue)
+            if (value + fillAmount < maxValue)
             {
                 value += fillAmount;
             }
@@ -123,10 +136,11 @@ public class LevelBar : MonoBehaviour
             }
             SetLevelBar(rank, value);
 
-            if(value == 1)
+            if (value == 1)
             {
                 rank++;
                 StartCoroutine(AnimateRankUp(rank));
+                rankAnimation = true;
                 while (rankAnimation)
                 {
                     yield return null;
@@ -142,14 +156,15 @@ public class LevelBar : MonoBehaviour
             yield return null;
         }
 
-        Utility.SetRankPercent(rank, currentRankPercent.percentage);
+        //Debug.Log($"rank: {rank} percentage: {currentRankPercent.percentage}");
+        Utility.SetRankPercent(rank, currentRankPercent.percentage, false);
     }
 
     bool rankAnimation = false;
     IEnumerator AnimateRankUp(int rank)
     {
         SetLevelBar(rank, 0);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         rankAnimation = false;
     }
 }

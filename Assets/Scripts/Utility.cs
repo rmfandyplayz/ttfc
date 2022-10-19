@@ -41,15 +41,16 @@ public static class Utility
         float oldPercent = PlayerPrefs.GetFloat("percentComplete", 0);
         RankPercent rankPercent = new RankPercent();
         rankPercent.percentage = oldPercent;
+        rankPercent.rank = lastRank;
         return rankPercent;
     }
 
-    public static void SetRankPercent(int rank, float percentComplete)
+    public static void SetRankPercent(int rank, float percentComplete, bool reset)
     {
         int lastRank = PlayerPrefs.GetInt("rank", 0);
         float oldPercent = PlayerPrefs.GetFloat("percentComplete", 0);
 
-        if (rank > lastRank || rank == lastRank && percentComplete > oldPercent)
+        if (reset || rank > lastRank || rank == lastRank && percentComplete > oldPercent)
         {
             PlayerPrefs.SetFloat("percentComplete", percentComplete);
             PlayerPrefs.SetInt("rank", rank);
