@@ -15,7 +15,7 @@ public class RequirementsHandler : MonoBehaviour
     List<RequirementButton> requirementButtons = new List<RequirementButton>();
     public Transform requirementButtonCanvas;
     public RectTransform content;
-    public RequirementImageHandler imageHandler;
+    public ImageHandler imageHandler;
     private float initialOffset;
     public float offset;
     public float contentSize;

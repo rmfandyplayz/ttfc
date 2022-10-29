@@ -5,22 +5,26 @@ using UnityEngine;
 /// <summary>
 /// This class contains all the data that will be read by MeritBadges.cs
 /// </summary>
-public class MeritBadge
+[System.Serializable] public class MeritBadge
 {
     public string name;
     public bool eagleRequired;
     public string imageName;
-    public string pamphletURL;
+    public string description;
+    public string pamphletpdfURL;
+    public string pamphletbuyURL;
     public string workbookURL;
     public List<string> tips;
     public bool completed;
 
-    public MeritBadge(string name, bool eagleRequired, string imageName, string pamphletURL, string workbookURL, List<string> tips)
+    public MeritBadge(string name, bool eagleRequired, string imageName, string description, string pamphletpdfURL, string pamphletbuyURL, string workbookURL, List<string> tips)
     {
         this.name = name;
         this.eagleRequired = eagleRequired;
         this.imageName = imageName;
-        this.pamphletURL = pamphletURL;
+        this.description = description;
+        this.pamphletpdfURL = pamphletpdfURL;
+        this.pamphletbuyURL = pamphletbuyURL;
         this.workbookURL = workbookURL;
         this.tips = tips;
 

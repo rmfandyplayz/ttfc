@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Requirement Select Screen.unity
     guid: 361bb8e07b0c90643aa4ac088f9c01a6
+  - enabled: 1
+    path: Assets/Scenes/MeritBadgeList.unity
+    guid: ce7e2dca0be62ca4d99c93b0d56baa42
   m_configObjects: {}

@@ -5,23 +5,21 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "ImageHandler", menuName = "Image Database")]
-public class RequirementImageHandler : ScriptableObject
+public class ImageHandler : ScriptableObject
 {
     public Sprite bowline, squareknot;
+    public string[] imageIDs;
+    public Sprite[] images;
 
     public Sprite GetImage(string imageID)
     {
-        if (imageID == "Square_knot")
+        for (int i = 0; i < imageIDs.Length; i++)
         {
-            return squareknot;
+            if (imageIDs[i] == imageID)
+            {
+                return images[i];
+            }
         }
-        else if (imageID == "bowline")
-        {
-            return bowline;
-        }
-        else
-        {
-            return null;
-        }
+        return null;
     }
 }
