@@ -17,6 +17,14 @@ MonoBehaviour:
   imageIDs:
   - Square_knot
   - bowline
+  - campingmb
+  - chessmb
+  - citinworldmb
+  - cookingmb
   images:
   - {fileID: 21300000, guid: 2ea17a15f0f3dce46805af3ab8eb704a, type: 3}
   - {fileID: 21300000, guid: 6fb3f84868d80c4469e3fb30196d23f7, type: 3}
+  - {fileID: 21300000, guid: 009dd1abd476d03488b6e74c4ef4ef85, type: 3}
+  - {fileID: 21300000, guid: 7b63ffbdea9e3db428aa1b74760970f1, type: 3}
+  - {fileID: 21300000, guid: d66f17eec420b864b9213221e9f4405a, type: 3}
+  - {fileID: 21300000, guid: ece97f1b359df044ab420c69e87dc9a1, type: 3}

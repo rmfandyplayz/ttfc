@@ -13,10 +13,7 @@ public class MeritBadges : MonoBehaviour
     public List<MeritBadge> meritBadges = new List<MeritBadge>();
     public List<MeritBadge> meritBadgesEagle = new List<MeritBadge>();
 
-    private void Start()
-    {
-        ReadData();
-    }
+    
 
     public void ReadData()
     {
