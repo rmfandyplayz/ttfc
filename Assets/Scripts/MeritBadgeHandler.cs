@@ -14,6 +14,8 @@ public class MeritBadgeHandler : MonoBehaviour
     public int columns = 2;
     public float columnWidth = 350;
     public float rowHeight = 350;
+    public float bottomBuffer = 45;
+    public bool displayEagle = false;
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class MeritBadgeHandler : MonoBehaviour
             index++;
         }
         RectTransform content = buttonCanvas.GetComponent<RectTransform>();
-        content.sizeDelta = new Vector2(content.sizeDelta.x, rowHeight/4 + rowHeight * index / columns);
+        content.sizeDelta = new Vector2(content.sizeDelta.x, bottomBuffer + rowHeight * Mathf.Ceil((float) index / columns));
 
     }
 

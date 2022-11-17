@@ -17,6 +17,7 @@ public class MeritBadgeButton : MonoBehaviour
     public ImageHandler imageHander;
 
     MeritBadge meritBadge;
+    public MeritBadgePanel meritBadgePanel;
 
 
     public void SetupButton(MeritBadge meritBadge)
@@ -35,6 +36,11 @@ public class MeritBadgeButton : MonoBehaviour
             button.image.sprite = nonEagleImage;
         }
 
+    }
+
+    public void OpenPanel()
+    {
+        meritBadgePanel.DisplayPanel(meritBadge);
     }
 
 }
