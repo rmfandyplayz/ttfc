@@ -2399,8 +2399,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.1842, y: -162.8163}
-  m_SizeDelta: {x: 721.6314, y: 91.6324}
+  m_AnchoredPosition: {x: -11.536, y: -823.69214}
+  m_SizeDelta: {x: 750, y: 1444.9956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1654536330
 MonoBehaviour:
@@ -2992,7 +2992,7 @@ GameObject:
   - component: {fileID: 2024531997}
   - component: {fileID: 2024531996}
   m_Layer: 5
-  m_Name: Rank Text
+  m_Name: Merit Badge Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3037,7 +3037,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Second Class
+  m_text: Merit Badge Help
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3064,7 +3064,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.6
+  m_fontSize: 39.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
