@@ -10,6 +10,9 @@ public class MeritBadgePanel : MonoBehaviour
     public TextMeshProUGUI meritBadgeName, text;
     public GameObject meritBadgePanel;
     private MeritBadge meritBadge;
+    public Button pamphletPDFbtn, pamphletBuybtn, workbookbtn;
+
+
 
     public void DisplayPanel(MeritBadge meritBadge)
     {
@@ -17,13 +20,38 @@ public class MeritBadgePanel : MonoBehaviour
         meritBadgeName.text = meritBadge.name;
         DisplayBulletPoints();
         meritBadgePanel.SetActive(true);
+        if(meritBadge.pamphletpdfURL == "none")
+        {
+            pamphletPDFbtn.interactable = false;
+        }
+        else
+        {
+            pamphletPDFbtn.interactable = true;
+        }
+        if(meritBadge.pamphletbuyURL == "none")
+        {
+            pamphletBuybtn.interactable = false;
+        }
+        else
+        {
+            pamphletBuybtn.interactable = true;
+        }
+        if(meritBadge.workbookURL == "none")
+        {
+            workbookbtn.interactable = false;
+        }
+        else
+        {
+            workbookbtn.interactable = true;
+        }
     }
 
     public void DisplayBulletPoints()
     {
         string displayText = "";
-        displayText += TPM_MarkupBullets('•' + meritBadge.description);
-        foreach(string tip in meritBadge.tips)
+        //displayText += TPM_MarkupBullets('•' + meritBadge.description);
+        displayText += meritBadge.description;
+        foreach (string tip in meritBadge.tips)
         {
             displayText += "\n" + TPM_MarkupBullets('•' + tip);
             //use "•"

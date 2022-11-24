@@ -375,8 +375,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1753310084}
   m_HandleRect: {fileID: 1753310083}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9029298
+  m_Value: 1.0000014
+  m_Size: 0.9029299
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -531,9 +531,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 1730.841}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
