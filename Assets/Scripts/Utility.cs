@@ -6,6 +6,30 @@ using UnityEngine.UIElements;
 
 public static class Utility
 {
+    static float ipadRatioLandscape = 4 / 3f;
+    static float ipadRatioPortrait = .75f;
+    public enum ScreenRatios
+    {
+        ipadLandScp, 
+        ipadPort, 
+        iphoneLandScp, 
+        iphonePort
+    }
+
+    public static ScreenRatios GetScreenRatio()
+    {
+        float screenRatio = Camera.main.aspect;
+        if(screenRatio + 0.001f > ipadRatioLandscape && screenRatio - 0.001f < ipadRatioLandscape)
+        {
+            return ScreenRatios.ipadLandScp;
+        }
+        else if (screenRatio + 0.001f > ipadRatioLandscape && screenRatio - 0.001f < ipadRatioLandscape)
+        {
+            return ScreenRatios.ipadPort;
+        }
+        else return ScreenRatios.iphonePort;
+    }
+
     public struct RankPercent
     {//struct is like a class but a container
         public int rank;

@@ -9,9 +9,10 @@ public class MeritBadgeHandler : MonoBehaviour
 {
 
     public MeritBadges meritBadges;
-    public MeritBadgeButton buttonPrefab;
+    MeritBadgeButton buttonPrefab, 
+    public MeritBadgeButton buttonIphonePrefab, buttonIpadPrefab;
     public Transform buttonCanvas;
-    public int columns = 2;
+    public int columns = 2, ipadLandColumns = 6, iphoneColumns = 2;
     public float columnWidth = 350;
     public float rowHeight = 350;
     public float bottomBuffer = 45;
@@ -19,8 +20,29 @@ public class MeritBadgeHandler : MonoBehaviour
 
     private void Start()
     {
+        SetColumns();
         meritBadges.ReadData();
         SetupButtons();
+    }
+
+    void SetColumns()
+    {
+        Utility.ScreenRatios screenRatio = Utility.GetScreenRatio();
+        switch (screenRatio)
+        {
+            case Utility.ScreenRatios.ipadLandScp:
+                columns = ipadLandColumns;
+                buttonPrefab = buttonIpadPrefab;
+                break;
+            case Utility.ScreenRatios.ipadPort:
+                columns = ipadLandColumns;
+                buttonPrefab = buttonIpadPrefab;
+                break;
+            case Utility.ScreenRatios.iphonePort:
+                columns = iphoneColumns;
+                buttonPrefab = buttonIphonePrefab;
+                break;
+        }
     }
 
     void SetupButtons()
