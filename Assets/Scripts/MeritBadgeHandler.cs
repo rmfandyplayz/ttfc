@@ -9,7 +9,7 @@ public class MeritBadgeHandler : MonoBehaviour
 {
 
     public MeritBadges meritBadges;
-    MeritBadgeButton buttonPrefab, 
+    MeritBadgeButton buttonPrefab;
     public MeritBadgeButton buttonIphonePrefab, buttonIpadPrefab;
     public Transform buttonCanvas;
     public int columns = 2, ipadLandColumns = 6, iphoneColumns = 2;
