@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class MainMenuScript : MonoBehaviour
 {
     public string welcomeScreen = "Welcome Screen", rankSelectionScreen = "Rank Selection Screen";
@@ -13,11 +14,11 @@ public class MainMenuScript : MonoBehaviour
         //add welcome screen check thingy
         if (!PlayerPrefs.HasKey("returning")) //change later??!
         {
-            ChangeSceneUniversalScript.SwitchSchene(welcomeScreen);
+            ChangeSceneUniversalScript.SwitchScene(welcomeScreen);
         }
         else
         {
-            ChangeSceneUniversalScript.SwitchSchene(rankSelectionScreen);
+            ChangeSceneUniversalScript.SwitchScene(rankSelectionScreen);
         }
     }
 }

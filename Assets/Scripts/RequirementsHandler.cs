@@ -61,13 +61,14 @@ public class RequirementsHandler : MonoBehaviour
     private void SetupRequirementButtons()
     {
         int reqNum = 1;
+        float x = prefabRequirementButton.GetComponent<RectTransform>().localPosition.x;
         foreach (Requirement requirement in requirements.requirements)
         {
             RequirementButton newButton = Instantiate(prefabRequirementButton);
             newButton.transform.SetParent(requirementButtonCanvas, false);
             newButton.gameObject.SetActive(true);
             requirementButtons.Add(newButton);
-            newButton.GetComponent<RectTransform>().localPosition = new Vector3(0, initialOffset -(offset * (reqNum - 1)), 0);
+            newButton.GetComponent<RectTransform>().localPosition = new Vector3(x, initialOffset -(offset * (reqNum - 1)), 0);
             newButton.Setup(requirement, reqNum, this);
             reqNum++;
         }

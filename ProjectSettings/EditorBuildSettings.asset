@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MeritBadgeList.unity
     guid: ce7e2dca0be62ca4d99c93b0d56baa42
+  - enabled: 1
+    path: Assets/Scenes/Requirement Select Screen Phone Version.unity
+    guid: 9341565f387b76746addb4be204c9dc0
+  - enabled: 1
+    path: Assets/Scenes/Main Screen Phone Version.unity
+    guid: 497c8b0f40c633b4b9174018c0cec7d1
   m_configObjects: {}
