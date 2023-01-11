@@ -6,27 +6,44 @@ using UnityEngine.Networking;
 
 public class DownloadHandler : MonoBehaviour
 {
-    public string url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkvEAYQkQDerOMWoMJozsDV6B4NUCr9SbIoAdenO4uqCdeNZiXgms5InXmFgdqQCmUFvObrDq_heY3/pubhtml?gid=0&single=true";
+    public string url = "";
     public string urlMeritBadge = "";
     string requirementsFileName = "Requirements.tsv";
     string meritBadgesFileName = "MeritBadges.tsv";
+
+    //How many seconds should the program wait when downloading the files?
+    public int maxDownloadWait = 3;
+
+    int downloadCompleteCounter = 0;
+
+
+    public GameObject startButton;
     private void Start()
     {
-        StartCoroutine(DownloadFile(url, "RequirementsTest.tsv"));
+        //Do later: Add loading thingy
+        startButton.SetActive(false);
+        StartCoroutine(StartDownload());
     }
 
-    /*
+
     IEnumerator StartDownload()
     {
-        StartCoroutine(DownloadFile())
+        StartCoroutine(DownloadFile(url, requirementsFileName));
+        StartCoroutine(DownloadFile(urlMeritBadge, meritBadgesFileName));
+        while(maxDownloadWait > Time.time && downloadCompleteCounter < 2)
+        {
+            yield return null;
+        }
+        startButton.SetActive(true);
     }
-    */
+
 
 
     public IEnumerator DownloadFile(string url, string fileName)
     {
         var uwr = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
-        string dataPath = "Resources" + fileName;
+        uwr.timeout = maxDownloadWait;
+        string dataPath = "Resources/" + fileName;
         if (Application.isEditor)
         {
             dataPath = Path.Combine("Assets", dataPath);
@@ -41,6 +58,7 @@ public class DownloadHandler : MonoBehaviour
         {
             Debug.Log($"File successfully accessed. Saved to {dataPath}");
         }
+        downloadCompleteCounter += 1;
     }
 
 }

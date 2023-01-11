@@ -620,6 +620,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1261944552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261944554}
+  - component: {fileID: 1261944553}
+  m_Layer: 0
+  m_Name: Download Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1261944553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261944552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7fdcab5fc63f94fba80afeea61ab95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkvEAYQkQDerOMWoMJozsDV6B4NUCr9SbIoAdenO4uqCdeNZiXgms5InXmFgdqQCmUFvObrDq_heY3/pub?gid=0&single=true&output=tsv '
+  urlMeritBadge: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_pV7feDkdeCQ0h6PvTvTXe6RAR68aISXvFTbOCt2IeI4b7tOBrFrENrYwuD2PWsEV9X22FSgNchzo/pub?gid=0&single=true&output=tsv '
+  maxDownloadWait: 3
+  startButton: {fileID: 1951186759}
+--- !u!4 &1261944554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261944552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 685.27344, y: 1396.702, z: -219641.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1515979866
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +1036,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 506617570}
         m_TargetAssemblyTypeName: ChangeSceneUniversalScript, Assembly-CSharp
-        m_MethodName: SwitchSchene
+        m_MethodName: SwitchScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
