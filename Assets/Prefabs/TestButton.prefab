@@ -472,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3473314365092696787
 RectTransform:
   m_ObjectHideFlags: 0
@@ -597,8 +597,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
+  m_sharedMaterial: {fileID: -6046603496848935203, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 7138853494480086703}
   - component: {fileID: 7138853494480086702}
   - component: {fileID: 7138853494480086689}
+  - component: {fileID: 1297268946}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -755,6 +756,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &1297268946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138853494480086691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e0a89ee05b2de4080ed1900283ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 7138853495866523155}
+  answerText: {fileID: 7138853494704110386}
+  answerImage: {fileID: 889902632}
+  videoButton: {fileID: 153295903}
+  textBuffer: 50
+  doneToggle: {fileID: 270535995}
 --- !u!1 &7138853494704110388
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,8 +841,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Answer Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
+  m_sharedMaterial: {fileID: 5572046088741752032, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1041,6 +1060,7 @@ MonoBehaviour:
   reqNumText: {fileID: 7138853494229928220}
   descriptionText: {fileID: 7138853495866523155}
   answerText: {fileID: 7138853494704110386}
+  requirementPanel: {fileID: 1297268946}
   easeInQuad:
     serializedVersion: 2
     m_Curve:
@@ -1147,6 +1167,7 @@ MonoBehaviour:
   dropdownSpeed: 2000
   answerLengthThreshold: 0
   buttonClickable: 1
+  ipadVariant: 0
   completedIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   incompleteIcon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   completedImage: {fileID: 5138940166320367337}
@@ -1305,8 +1326,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 60e6dd62a05f3db4ea3e072f50be45d0, type: 2}
+  m_sharedMaterial: {fileID: 7927884155738916635, guid: 60e6dd62a05f3db4ea3e072f50be45d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

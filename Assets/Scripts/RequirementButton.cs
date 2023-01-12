@@ -11,6 +11,7 @@ public class RequirementButton : MonoBehaviour
     public TextMeshProUGUI reqNumText, descriptionText, answerText; //Requirement Number
     RequirementsHandler requirementsHandler;
     Requirement requirements;
+    public RequirementPanel requirementPanel;
     public AnimationCurve easeInQuad;
     public AnimationCurve easeOutQuad;
     public float dropdownLength = 800;
@@ -18,6 +19,7 @@ public class RequirementButton : MonoBehaviour
     public int answerLengthThreshold = 50;
     public bool buttonClickable = true;
     private bool buttonOpen = false;
+    public bool ipadVariant = false; //If true, all buttons will follow the ipad layout.
 
     public Sprite completedIcon, incompleteIcon;
     public Image completedImage;
@@ -41,78 +43,58 @@ public class RequirementButton : MonoBehaviour
         this.requirements = requirement;
         reqNumText.text = requirement.requirementNumber;
 
-        descriptionText.text = requirement.descriptionText;
-        answerText.text = requirement.answer;
-
-        descriptionText.ForceMeshUpdate();
-        answerText.ForceMeshUpdate();
-
-        answerText.rectTransform.localPosition = new Vector2(answerText.rectTransform.localPosition.x, -descriptionText.textBounds.extents.y * 2 - textBuffer);
-
-        dropdownLength = descriptionText.textBounds.extents.y * 2 + answerText.textBounds.extents.y * 2 + textBuffer;
-
-        if (requirement.hasImage)
+        if(ipadVariant == true)
         {
-            answerImage.sprite = requirementsHandler.imageHandler.GetImage(requirement.images[0]);
-            if (answerImage.sprite)
-            {
-                Vector2 imageSize = answerImage.sprite.bounds.size;
-                answerImage.rectTransform.sizeDelta = imageSize;
-                answerImage.rectTransform.localPosition = new Vector3(0, -dropdownLength, 0);
-                dropdownLength += imageSize.y;
-            }
-        }
-        else
-        {
-            answerImage.enabled = false;
+            string completed = PlayerPrefs.GetString(requirement.id, "no");
+            SetCompleted(completed);
+            return;
         }
 
-        if (requirement.hasVideo)
-        {
-            videoURL = requirement.videoURL;
-            float videoSize = videoButton.GetComponent<RectTransform>().rect.height;
-            videoButton.GetComponent<Transform>().localPosition = new Vector3(0, -dropdownLength - textBuffer, 0);
-            dropdownLength += videoSize + textBuffer;
-        }
-        else
-        {
-            videoButton.gameObject.SetActive(false);
-        }
-
-        string completed = PlayerPrefs.GetString(requirement.id, "no");
-        SetCompleted(completed);
-
-        dropdownLength += 87.5f;
+        dropdownLength += requirementPanel.Setup(this, requirements, requirementsHandler);
     }
 
 
     public void ButtonClicked()
     {
-        if (buttonClickable == true)
+        if(ipadVariant == true)
         {
-            buttonClickable = false;
-            if (!buttonOpen)
-            {
-                buttonOpen = true;
-                StartCoroutine(DropDownMovement(-dropdownLength));
-            }
-            else
-            {
-                buttonOpen = false;
-                StartCoroutine(DropDownMovement(dropdownLength));
-            }
-
-
+            requirementPanel.Setup(this, requirements, requirementsHandler);
         }
-
+        else
+        {
+            if (buttonClickable == true)
+            {
+                buttonClickable = false;
+                if (!buttonOpen)
+                {
+                    buttonOpen = true;
+                    StartCoroutine(DropDownMovement(-dropdownLength));
+                }
+                else
+                {
+                    buttonOpen = false;
+                    StartCoroutine(DropDownMovement(dropdownLength));
+                }
+            }
+        }
     }
 
-    string videoURL;
-    public void VideoButtonClicked()
+    public Toggle doneToggle;
+    public void SetCompleted(string completed)
     {
-        Application.OpenURL(videoURL);
+        if (completed == "no")
+        {
+            completedImage.sprite = incompleteIcon;
+            this.completed = false;
+            doneToggle.isOn = false;
+        }
+        else
+        {
+            completedImage.sprite = completedIcon;
+            this.completed = true;
+            doneToggle.isOn = true;
+        }
     }
-
 
     public IEnumerator DropDownMovement(float length)
     {
@@ -144,34 +126,5 @@ public class RequirementButton : MonoBehaviour
         }
         buttonClickable = true;
         GetComponent<Button>().interactable = true;
-    }
-
-    public Toggle doneToggle;
-    public void SetCompleted(string completed)
-    {
-        if(completed == "no")
-        {
-            completedImage.sprite = incompleteIcon;
-            this.completed = false;
-            doneToggle.isOn = false;
-        }
-        else
-        {
-            completedImage.sprite = completedIcon;
-            this.completed = true;
-            doneToggle.isOn = true;
-        } 
-    }
-
-    bool isComplete;
-    public void ToggleClick(bool isOn)
-    {
-        if(isOn != completed)
-        {
-            completed = isOn;
-            requirementsHandler.RequirementCompleted(requirements.id, isOn);
-            if (isOn) SetCompleted("yes");
-            else SetCompleted("no");
-        }
     }
 }
