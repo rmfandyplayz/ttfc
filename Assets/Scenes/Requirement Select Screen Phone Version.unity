@@ -157,7 +157,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.00003182888}
-  m_SizeDelta: {x: 0, y: 1730.8}
+  m_SizeDelta: {x: 0, y: 1562.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &160008360
 GameObject:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1753310083}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9029298
+  m_Size: 0.99999416
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1484,54 +1484,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 62186915}
     m_Modifications:
-    - target: {fileID: 593974645015234976, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138940166320367337, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138940166320367337, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138940166320367337, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138940166320367337, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138853494229928220, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
-    - target: {fileID: 7138853494229928220, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -6046603496848935203, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
-    - target: {fileID: 7138853494229928220, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138853494480086688, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.00018310547
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138853494704110386, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
-    - target: {fileID: 7138853494704110386, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 5572046088741752032, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
-    - target: {fileID: 7138853494704110386, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7138853494770880434, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1619,22 +1571,6 @@ PrefabInstance:
     - target: {fileID: 7138853494770880437, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
       propertyPath: m_Name
       value: TestButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138853494770880437, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138853495866523155, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 60e6dd62a05f3db4ea3e072f50be45d0, type: 2}
-    - target: {fileID: 7138853495866523155, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7927884155738916635, guid: 60e6dd62a05f3db4ea3e072f50be45d0, type: 2}
-    - target: {fileID: 7138853495866523155, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}

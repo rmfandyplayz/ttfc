@@ -271,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000037970087}
+  m_AnchoredPosition: {x: 0, y: 0.00008319262}
   m_SizeDelta: {x: 0, y: 1562.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &116408617
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370131174}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -874,7 +874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &537059746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -938,8 +938,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RequirementButton, Assembly-CSharp
+      - m_Target: {fileID: 1850525595}
+        m_TargetAssemblyTypeName: RequirementPanel, Assembly-CSharp
         m_MethodName: VideoButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -1300,8 +1300,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RequirementButton, Assembly-CSharp
+      - m_Target: {fileID: 1850525595}
+        m_TargetAssemblyTypeName: RequirementPanel, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 0
         m_Arguments:
@@ -1736,6 +1736,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 111121488}
     m_Modifications:
+    - target: {fileID: 153295903, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1850525595}
+    - target: {fileID: 153295903, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VideoButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 153295903, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RequirementPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7138853494770880434, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1823,10 +1835,6 @@ PrefabInstance:
     - target: {fileID: 7138853494770880437, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
       propertyPath: m_Name
       value: TestButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138853494770880437, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7138853494770880446, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
       propertyPath: ipadVariant
@@ -2604,12 +2612,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Description Text
-
-'
+  m_text: Click on a requirement to get started!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 60e6dd62a05f3db4ea3e072f50be45d0, type: 2}
-  m_sharedMaterial: {fileID: 7927884155738916635, guid: 60e6dd62a05f3db4ea3e072f50be45d0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
+  m_sharedMaterial: {fileID: -6046603496848935203, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2633,8 +2639,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2669,7 +2675,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 10, y: 10, z: 10, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2872,7 +2878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -40.53}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 65.4937}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2109509446
@@ -2895,7 +2901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Answer Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
   m_sharedMaterial: {fileID: 5572046088741752032, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
@@ -2922,8 +2928,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2958,7 +2964,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 10, y: 10, z: 10, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

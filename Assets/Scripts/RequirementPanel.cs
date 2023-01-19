@@ -27,7 +27,7 @@ public class RequirementPanel : MonoBehaviour
         descriptionText.ForceMeshUpdate();
         answerText.ForceMeshUpdate();
 
-        answerText.rectTransform.localPosition = new Vector2(answerText.rectTransform.localPosition.x, -descriptionText.textBounds.extents.y * 2 - textBuffer);
+        answerText.rectTransform.anchoredPosition = new Vector2(answerText.rectTransform.localPosition.x, -descriptionText.textBounds.extents.y * 2 - textBuffer);
 
         float dropdownLength = descriptionText.textBounds.extents.y * 2 + answerText.textBounds.extents.y * 2 + textBuffer;
 
@@ -38,9 +38,11 @@ public class RequirementPanel : MonoBehaviour
             {
                 Vector2 imageSize = answerImage.sprite.bounds.size;
                 answerImage.rectTransform.sizeDelta = imageSize;
-                answerImage.rectTransform.localPosition = new Vector3(0, -dropdownLength, 0);
+                answerImage.rectTransform.anchoredPosition = new Vector3(0, -dropdownLength, 0);
                 dropdownLength += imageSize.y;
+                answerImage.enabled = true;
             }
+            else answerImage.enabled = false;
         }
         else
         {
@@ -51,8 +53,9 @@ public class RequirementPanel : MonoBehaviour
         {
             videoURL = requirement.videoURL;
             float videoSize = videoButton.GetComponent<RectTransform>().rect.height;
-            videoButton.GetComponent<Transform>().localPosition = new Vector3(0, -dropdownLength - textBuffer, 0);
+            videoButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -dropdownLength - textBuffer, 0);
             dropdownLength += videoSize + textBuffer;
+            videoButton.gameObject.SetActive(true);
         }
         else
         {
@@ -62,6 +65,7 @@ public class RequirementPanel : MonoBehaviour
         string completed = PlayerPrefs.GetString(requirement.id, "no");
         requirementButton.SetCompleted(completed);
 
+        SetCompleted(completed);
         dropdownLength += 87.5f;
         return dropdownLength;
     }

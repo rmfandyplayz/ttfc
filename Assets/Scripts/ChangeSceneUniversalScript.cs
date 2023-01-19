@@ -184,7 +184,7 @@ public class ChangeSceneUniversalScript : MonoBehaviour
                 }
                 else
                 {
-                    return "Requirement Select Screen";
+                    return "Requirement Select Screen Phone Version";
                 }
             case SceneNames.MeritBadgeList:
                 if (Utility.GetScreenRatio() == Utility.ScreenRatios.ipadLandScp)
