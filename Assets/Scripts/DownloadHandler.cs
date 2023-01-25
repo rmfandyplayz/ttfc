@@ -48,6 +48,10 @@ public class DownloadHandler : MonoBehaviour
         {
             dataPath = Path.Combine("Assets", dataPath);
         }
+        else
+        {
+            dataPath = Application.persistentDataPath + "/" + dataPath;
+        }
         uwr.downloadHandler = new DownloadHandlerFile(dataPath);
         yield return uwr.SendWebRequest();
         if (uwr.result != UnityWebRequest.Result.Success)

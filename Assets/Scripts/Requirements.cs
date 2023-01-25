@@ -22,7 +22,7 @@ public class Requirements : MonoBehaviour
         }
         else
         {
-            relativePathToData = pathToData;
+            relativePathToData = Application.persistentDataPath + "/" + pathToData;
         }
         
         IEnumerable<string> lines = File.ReadLines(relativePathToData);
