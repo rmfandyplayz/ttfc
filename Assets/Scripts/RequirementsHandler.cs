@@ -62,7 +62,7 @@ public class RequirementsHandler : MonoBehaviour
     {
         int reqNum = 1;
         float x = prefabRequirementButton.GetComponent<RectTransform>().localPosition.x;
-        foreach (Requirement requirement in requirements.requirements)
+        foreach (Requirement requirement in requirements.requirementsList)
         {
             RequirementButton newButton = Instantiate(prefabRequirementButton);
             newButton.transform.SetParent(requirementButtonCanvas, false);
@@ -79,7 +79,7 @@ public class RequirementsHandler : MonoBehaviour
     public void MoveButtons(RequirementButton buttonStart, float step) //How much the button is being changed (step)
     {
         bool moving = false;
-        for(int i = 0; i < requirements.requirements.Count; i++)
+        for(int i = 0; i < requirements.requirementsList.Count; i++)
         {
             if(buttonStart == requirementButtons[i])
             {

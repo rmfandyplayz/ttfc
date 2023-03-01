@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00003182888}
+  m_AnchoredPosition: {x: 0, y: 0.0000411127}
   m_SizeDelta: {x: 0, y: 1562.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &160008360
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1753310083}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.99999416
+  m_Size: 0.9999943
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathToData: Resources/Requirements.tsv
-  requirements: []
+  requirementsList: []
 --- !u!4 &460160282
 Transform:
   m_ObjectHideFlags: 0
@@ -1484,6 +1484,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 62186915}
     m_Modifications:
+    - target: {fileID: 889902632, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 889902632, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 889902632, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297268946, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
+      propertyPath: maxWidth
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 7138853494704110386, guid: 4cb62d1f1e9f2764ca9c36f96f9a8029, type: 3}
       propertyPath: m_fontSize
       value: 40

@@ -1,6 +1,7 @@
 ﻿
 //using UnityEditor.PackageManager;
 //using UnityEditorInternal;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -28,6 +29,23 @@ public static class Utility
             return ScreenRatios.ipadPort;
         }
         else return ScreenRatios.iphonePort;
+    }
+
+    public static string GetFilePath(string filePath)
+    {
+        if (Application.isEditor)
+        {
+            return System.IO.Path.Combine("Assets", filePath);
+        }
+        else
+        {
+            return Application.persistentDataPath + "/" + filePath;
+        }
+    }
+
+    public static string GetImageFilePath(string imageName)
+    {
+        return GetFilePath("Resources/Images/" + imageName + ".png");
     }
 
     public struct RankPercent

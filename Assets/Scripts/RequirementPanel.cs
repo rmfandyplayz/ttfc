@@ -10,6 +10,7 @@ public class RequirementPanel : MonoBehaviour
     public Image answerImage;
     public Button videoButton; //imageButton answerButton
     public float textBuffer = 50;
+    public int maxWidth = 500;
     string videoURL;
     RequirementButton requirementButton;
     RequirementsHandler requirementsHandler;
@@ -34,9 +35,20 @@ public class RequirementPanel : MonoBehaviour
         if (requirement.hasImage)
         {
             answerImage.sprite = requirementsHandler.imageHandler.GetImage(requirement.images[0]);
+            if(answerImage.rectTransform.sizeDelta.x > maxWidth)
+            {
+                int width = (int)GetComponent<RectTransform>().sizeDelta.x;
+                int height = (int)GetComponent<RectTransform>().sizeDelta.y;
+                
+                answerImage.rectTransform.sizeDelta = new Vector2(maxWidth, maxWidth * height / width);
+            }
             if (answerImage.sprite)
             {
                 Vector2 imageSize = answerImage.sprite.bounds.size;
+                if(imageSize.x > maxWidth)
+                {
+                    imageSize = new Vector2(maxWidth, maxWidth * imageSize.y / imageSize.x);
+                }
                 answerImage.rectTransform.sizeDelta = imageSize;
                 answerImage.rectTransform.anchoredPosition = new Vector3(0, -dropdownLength, 0);
                 dropdownLength += imageSize.y;

@@ -20,9 +20,11 @@ public class DownloadHandler : MonoBehaviour
     public GameObject startButton;
     private void Start()
     {
+        //StartCoroutine(GetTexture("https://upload.wikimedia.org/wikipedia/commons/6/6e/Nf_knots.png"));
         //Do later: Add loading thingy
         startButton.SetActive(false);
         StartCoroutine(StartDownload());
+
     }
 
 
@@ -30,7 +32,13 @@ public class DownloadHandler : MonoBehaviour
     {
         StartCoroutine(DownloadFile(url, requirementsFileName));
         StartCoroutine(DownloadFile(urlMeritBadge, meritBadgesFileName));
-        while(maxDownloadWait > Time.time && downloadCompleteCounter < 2)
+        while (maxDownloadWait > Time.time && downloadCompleteCounter < 2)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(DownloadImages());
+        while (!imagesDownloaded)
         {
             yield return null;
         }
@@ -65,4 +73,58 @@ public class DownloadHandler : MonoBehaviour
         downloadCompleteCounter += 1;
     }
 
+    public ImageHandler imageHandler;
+    public Requirements requirements;
+    public MeritBadge meritBadge;
+    bool imagesDownloaded = false;
+    bool imageDownloaded = false;
+    bool imageDownloadedSuccessful = false;
+    IEnumerator DownloadImages()
+    {
+        for (int i = 0; i < 7; i += 1)
+        {
+            //todo initialize requirements by rank
+            requirements.ReadData((Requirement.Rank)i);
+            foreach (Requirement requirement in requirements.requirementsList)
+            {
+                if (requirement.hasImage && !imageHandler.GetImage(requirement.images[0]))
+                {
+                    imageDownloaded = false;
+                    imageDownloadedSuccessful = false;
+                    StartCoroutine(GetTexture(requirement.imageURL, requirement.images[0]));
+                    while (!imageDownloaded) yield return null;
+                    //if (imageDownloadedSuccessful)
+                    //{
+                    //    string imageName = requirement.images[0];
+                    //    Debug.Log($"UTILITY GET IMAGE FILE PATH {Utility.GetImageFilePath(imageName)}");
+                    //    imageHandler.AddImage(imageName, Utility.GetImageFilePath(imageName));
+                    //}
+                }
+            }
+        }
+        imagesDownloaded = true;
+    }
+
+    IEnumerator GetTexture(string url, string imageName)
+    {
+        Debug.Log(url);
+        UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+        yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            //notify user when download error occurs
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Texture2D myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+            byte[] bytes = myTexture.EncodeToPNG();
+
+            string dataPath = Utility.GetImageFilePath(imageName);
+            System.IO.File.WriteAllBytes(dataPath, bytes);
+            imageDownloadedSuccessful = true;
+        }
+        imageDownloaded = true;
+    }
 }
