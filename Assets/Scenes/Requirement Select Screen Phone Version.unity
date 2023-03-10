@@ -375,8 +375,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1753310084}
   m_HandleRect: {fileID: 1753310083}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999943
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -750,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 13.465698, y: 0.000061035156}
+  m_AnchoredPosition: {x: 13.46582, y: 0.000061035156}
   m_SizeDelta: {x: 160.6686, y: 69.821}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1293328425
@@ -904,10 +904,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
+  m_sharedMaterial: {fileID: 5572046088741752032, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -931,14 +931,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.6
+  m_fontSize: 58.65
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 60
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1087,8 +1087,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Second Class
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
+  m_sharedMaterial: {fileID: 5572046088741752032, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.6
+  m_fontSize: 50.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
