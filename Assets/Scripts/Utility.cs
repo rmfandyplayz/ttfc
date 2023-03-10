@@ -45,7 +45,7 @@ public static class Utility
 
     public static string GetImageFilePath(string imageName)
     {
-        return GetFilePath("Resources/Images/" + imageName + ".png");
+        return GetFilePath("Resources/" + imageName + ".png");
     }
 
     public struct RankPercent
