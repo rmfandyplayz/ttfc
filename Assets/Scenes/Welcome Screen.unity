@@ -765,7 +765,8 @@ MonoBehaviour:
 
     (Protip:
     If an answer to a requirement is "-", it means it is unsupported yet! You can
-    help by filling out the feedback form and choosing that requirement change/addition!'
+    help by filling out the feedback form and choosing that requirement change/addition
+    option!)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
   m_sharedMaterial: {fileID: 5572046088741752032, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
