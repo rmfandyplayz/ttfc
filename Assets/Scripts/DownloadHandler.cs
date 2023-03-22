@@ -13,6 +13,7 @@ public class DownloadHandler : MonoBehaviour
 
     //How many seconds should the program wait when downloading the files?
     public int maxDownloadWait = 3;
+    float downloadStart; //Variable to keep track of when the download started so we can keep track of how much time passed before reading downloaded files. This is useful to prevent the IO conflict error.
 
     int downloadCompleteCounter = 0;
 
@@ -30,9 +31,10 @@ public class DownloadHandler : MonoBehaviour
 
     IEnumerator StartDownload()
     {
+        downloadStart = Time.time;
         StartCoroutine(DownloadFile(url, requirementsFileName));
         StartCoroutine(DownloadFile(urlMeritBadge, meritBadgesFileName));
-        while (maxDownloadWait > Time.time && downloadCompleteCounter < 2)
+        while (maxDownloadWait + downloadStart> Time.time && downloadCompleteCounter < 2)
         {
             yield return null;
         }
