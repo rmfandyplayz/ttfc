@@ -37,7 +37,7 @@ public class MainScreen
         }
         IEnumerable<string> lines = File.ReadLines(relativePathToData);
         int startIndex = screenRatios == Utility.ScreenRatios.ipadLandScp ? 0 : 8;
-        int endIndex = screenRatios == Utility.ScreenRatios.iphoneLandScp ? 7 : 15;
+        int endIndex = screenRatios == Utility.ScreenRatios.ipadLandScp ? 7 : 15;
 
         int index = 0;
         foreach(string line in lines)

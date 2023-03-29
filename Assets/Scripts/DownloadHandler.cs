@@ -37,7 +37,7 @@ public class DownloadHandler : MonoBehaviour
         StartCoroutine(DownloadFile(url, requirementsFileName));
         StartCoroutine(DownloadFile(urlMeritBadge, meritBadgesFileName));
         StartCoroutine(DownloadFile(urlMainScreenData, mainScreenFileName));
-        while (maxDownloadWait + downloadStart> Time.time && downloadCompleteCounter < 2)
+        while (maxDownloadWait + downloadStart> Time.time && downloadCompleteCounter < 3)
         {
             yield return null;
         }
