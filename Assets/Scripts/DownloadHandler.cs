@@ -8,6 +8,8 @@ public class DownloadHandler : MonoBehaviour
 {
     public string url = "";
     public string urlMeritBadge = "";
+    public string urlMainScreenData = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRuQ_4qxuy3GLUfgLZd2MWlu4S5aCGhTUYp8Ljbbuq5c9WeKxlV3CpaLed6fzKyeMa5YcG8Qqb7-Ef9/pub?output=tsv";
+    public string mainScreenFileName = "MainScreenData.tsv";
     string requirementsFileName = "Requirements.tsv";
     string meritBadgesFileName = "MeritBadges.tsv";
 
@@ -19,7 +21,7 @@ public class DownloadHandler : MonoBehaviour
 
 
     public GameObject startButton;
-    private void Start()
+    public void StartDownloading()
     {
         //StartCoroutine(GetTexture("https://upload.wikimedia.org/wikipedia/commons/6/6e/Nf_knots.png"));
         //Do later: Add loading thingy
@@ -34,6 +36,7 @@ public class DownloadHandler : MonoBehaviour
         downloadStart = Time.time;
         StartCoroutine(DownloadFile(url, requirementsFileName));
         StartCoroutine(DownloadFile(urlMeritBadge, meritBadgesFileName));
+        StartCoroutine(DownloadFile(urlMainScreenData, mainScreenFileName));
         while (maxDownloadWait + downloadStart> Time.time && downloadCompleteCounter < 2)
         {
             yield return null;
@@ -104,6 +107,15 @@ public class DownloadHandler : MonoBehaviour
                 }
             }
         }
+
+        MainScreen mainScreen = new MainScreen(Utility.GetScreenRatio());
+        if (!imageHandler.GetImage(mainScreen.backgroundImageID))
+        {
+            imageDownloaded = false;
+            imageDownloadedSuccessful = false;
+            StartCoroutine(GetTexture(mainScreen.backgroundURL, mainScreen.backgroundImageID));
+        }
+
         imagesDownloaded = true;
     }
 
