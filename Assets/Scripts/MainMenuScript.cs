@@ -16,10 +16,12 @@ public class MainMenuScript : MonoBehaviour
     public Button iphoneEnter;
     public Button ipadEnter;
     public DownloadHandler downloadHandler;
+    public ChangeSceneUniversalScript changeSceneUniversalScript;
 
 
     private void Start()
     {
+        changeSceneUniversalScript = GetComponent<ChangeSceneUniversalScript>();
         Utility.ScreenRatios screenRatio = Utility.GetScreenRatio();
         if (screenRatio == Utility.ScreenRatios.ipadLandScp)
         {

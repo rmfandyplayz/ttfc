@@ -98,16 +98,10 @@ public class DownloadHandler : MonoBehaviour
                     imageDownloadedSuccessful = false;
                     StartCoroutine(GetTexture(requirement.imageURL, requirement.images[0]));
                     while (!imageDownloaded) yield return null;
-                    //if (imageDownloadedSuccessful)
-                    //{
-                    //    string imageName = requirement.images[0];
-                    //    Debug.Log($"UTILITY GET IMAGE FILE PATH {Utility.GetImageFilePath(imageName)}");
-                    //    imageHandler.AddImage(imageName, Utility.GetImageFilePath(imageName));
-                    //}
                 }
             }
         }
-
+        //download buttons for main screen
         MainScreen mainScreen = new MainScreen(Utility.GetScreenRatio());
         if (!imageHandler.GetImage(mainScreen.backgroundImageID))
         {
@@ -115,7 +109,15 @@ public class DownloadHandler : MonoBehaviour
             imageDownloadedSuccessful = false;
             StartCoroutine(GetTexture(mainScreen.backgroundURL, mainScreen.backgroundImageID));
         }
-
+        foreach(MainScreen.MainScreenButton button in mainScreen.mainScreenButtons)
+        {
+            if (!imageHandler.GetImage(button.spriteID))
+            {
+                imageDownloaded = false;
+                imageDownloadedSuccessful = false;
+                StartCoroutine(GetTexture(button.spriteURL, button.spriteID));
+            }
+        }
         imagesDownloaded = true;
     }
 
