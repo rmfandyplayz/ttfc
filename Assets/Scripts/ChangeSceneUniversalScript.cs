@@ -17,32 +17,6 @@ public class ChangeSceneUniversalScript : MonoBehaviour
         MeritBadgeList
     }
 
-    private void Start()
-    {
-        sceneTransition = GetComponentInChildren<Animator>();
-        if (sceneTransition == null) //if we can't find the animation within the parents, find it in the children.
-        {
-            sceneTransition = GetComponentInParent<Animator>();
-        }
-        if(sceneTransition == null) //if we still can't find it, this will be the last resort.
-        {
-            sceneTransition = GetComponent<Animator>();
-        }
-    }
-
-    private void OnEnable() //backup option just in case Start does not work
-    {
-        sceneTransition = GetComponentInChildren<Animator>();
-        if (sceneTransition == null) //if we can't find the animation within the parents, find it in the children.
-        {
-            sceneTransition = GetComponentInParent<Animator>();
-        }
-        if (sceneTransition == null) //if we still can't find it, this will be the last resort.
-        {
-            sceneTransition = GetComponent<Animator>();
-        }
-    }
-
     public static void SwitchScene(string targetScene)
     {
         ChangeSceneUniversalScript changeSceneUniversalScript = FindObjectOfType<ChangeSceneUniversalScript>();
@@ -61,11 +35,11 @@ public class ChangeSceneUniversalScript : MonoBehaviour
     /// <returns></returns>
     public IEnumerator StartSceneTransition(string targetScene)
     {
-        Debug.Log("Started Scene Transition");
+        //Debug.Log("Started Scene Transition");
         sceneTransition.SetTrigger("AnimationStart");
         yield return new WaitForSeconds(.5f); //change this to the variable animationWaitTime later on?
         SceneManager.LoadScene(GetSceneName(GetSceneName(targetScene)));
-        Debug.Log("Ended Scene Transition");
+        //Debug.Log("Ended Scene Transition");
     }
 
 
