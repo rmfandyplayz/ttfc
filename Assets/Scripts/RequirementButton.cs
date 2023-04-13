@@ -58,7 +58,8 @@ public class RequirementButton : MonoBehaviour
     {
         if(ipadVariant == true)
         {
-            requirementPanel.Setup(this, requirements, requirementsHandler);
+            float contentLength = requirementPanel.Setup(this, requirements, requirementsHandler);
+            requirementPanel.SetContentPanelLength(contentLength);
         }
         else
         {

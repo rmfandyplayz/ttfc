@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Profiling.Memory.Experimental;
 
 public class RequirementPanel : MonoBehaviour
 {
@@ -15,6 +16,23 @@ public class RequirementPanel : MonoBehaviour
     RequirementButton requirementButton;
     RequirementsHandler requirementsHandler;
     Requirement requirements;
+    public RectTransform content;
+
+
+    public float minContentLength = 1562.8f;
+    /// <summary>
+    /// This is used for the iPad only.
+    /// </summary>
+    /// <param name="length"></param>
+    public void SetContentPanelLength(float length)
+    {
+        if(length < minContentLength)
+        {
+            length = minContentLength;
+        }
+        content.sizeDelta = new Vector2(content.sizeDelta.x, length);
+    }
+
 
     public float Setup(RequirementButton requirementButton, Requirement requirement, RequirementsHandler requirementsHandler)
     {
@@ -30,7 +48,7 @@ public class RequirementPanel : MonoBehaviour
 
         answerText.rectTransform.anchoredPosition = new Vector2(answerText.rectTransform.localPosition.x, -descriptionText.textBounds.extents.y * 2 - textBuffer);
 
-        float dropdownLength = descriptionText.textBounds.extents.y * 2 + answerText.textBounds.extents.y * 2 + textBuffer;
+        float dropdownLength = descriptionText.textBounds.extents.y * 2 + answerText.textBounds.extents.y * 2 + textBuffer * 2;
 
         if (requirement.hasImage)
         {
