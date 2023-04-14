@@ -271,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.011695373}
+  m_AnchoredPosition: {x: 0, y: 0.0111300135}
   m_SizeDelta: {x: 0, y: 1562.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &116408617
@@ -1172,8 +1172,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 964935724}
   m_HandleRect: {fileID: 964935723}
   m_Direction: 2
-  m_Value: -0.06741573
-  m_Size: 0.9999891
+  m_Value: 0
+  m_Size: 0.9999876
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2699,7 +2699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <indent=4%>1. Your mom</indent>
+  m_text: <indent=4%>Select a rank requirement.</indent>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
   m_sharedMaterial: {fileID: -6046603496848935203, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
