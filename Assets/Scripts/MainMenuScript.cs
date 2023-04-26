@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,9 @@ public class MainMenuScript : MonoBehaviour
 
     private void Start()
     {
+        int refreshRate = Screen.currentResolution.refreshRate;
+        Debug.Log($"Refresh Rate: {refreshRate}Hz");
+        Application.targetFrameRate = refreshRate;
         changeSceneUniversalScript = GetComponent<ChangeSceneUniversalScript>();
         Utility.ScreenRatios screenRatio = Utility.GetScreenRatio();
         if (screenRatio == Utility.ScreenRatios.ipadLandScp)
