@@ -261,7 +261,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.14901961, g: 0.12941177, b: 0.2, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -592,8 +592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0086102, y: 1073}
-  m_SizeDelta: {x: 1191.8472, y: 507.5834}
+  m_AnchoredPosition: {x: 0.00000099558, y: 1147}
+  m_SizeDelta: {x: 1191.8472, y: 254.195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923686250
 MonoBehaviour:
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HEY YOU! YES YOU!
+  m_text: Welcome!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
   m_sharedMaterial: {fileID: -6046603496848935203, guid: ed2ad463e548697488b75c9756212d7b, type: 2}
@@ -792,8 +792,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -170.16272}
-  m_SizeDelta: {x: 0, y: 1784.145}
+  m_AnchoredPosition: {x: 0, y: -61.844917}
+  m_SizeDelta: {x: 0, y: 2064.1836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204515172
 MonoBehaviour:
@@ -815,19 +815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This app is in VERY EARLY DEVELOPMENT! Things WILL break, and stuff are
-    UNFINISHED. Before you yell at me in the App Store reviews going "omg why dis
-    app look like it''s made by a 4 year old" just know this. Technically, this app
-    isn''t supposed to be for production yet. It''s to see if this app is fundamentally
-    a good idea. The best way to leave a review as of now is to go on my website,
-    find the feedback form, and leave your thoughts there. When this app reaches
-    a version like 1.0.0, it means it is officially in production mode and leaving
-    a review on the app store would be appropriate. Thanks for understanding!
-
-    (Protip:
-    If an answer to a requirement is "-", it means it is unsupported yet! You can
-    help by filling out the feedback form and choosing that requirement change/addition
-    option!)'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
   m_sharedMaterial: {fileID: 5572046088741752032, guid: 18fc70a5bb584f743b2455fa6ed2dbc2, type: 2}
@@ -854,7 +842,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -890,7 +878,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.1729126, y: 0, z: -4.1730347, w: 1.9246826}
+  m_margin: {x: 10, y: 10, z: 10, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
