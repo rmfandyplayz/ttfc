@@ -46,7 +46,7 @@ public class MainMenuScript : MonoBehaviour
     public void EnterButtonClick()
     {
         //add welcome screen check thingy
-        if (!PlayerPrefs.HasKey("returning")) //change later??!
+        if (!PlayerPrefs.HasKey("returning") && false) //change later??!
         {
             ChangeSceneUniversalScript.SwitchScene(welcomeScreen);
         }
