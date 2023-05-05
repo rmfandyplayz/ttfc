@@ -19,13 +19,14 @@ public class DownloadHandler : MonoBehaviour
 
     int downloadCompleteCounter = 0;
 
-
+    public GameObject loadingCircle;
     public GameObject startButton;
     public void StartDownloading()
     {
         //StartCoroutine(GetTexture("https://upload.wikimedia.org/wikipedia/commons/6/6e/Nf_knots.png"));
         //Do later: Add loading thingy
         startButton.SetActive(false);
+        loadingCircle.SetActive(true);
         StartCoroutine(StartDownload());
 
     }
@@ -47,6 +48,7 @@ public class DownloadHandler : MonoBehaviour
         {
             yield return null;
         }
+        loadingCircle.SetActive(false);
         startButton.SetActive(true);
     }
 
@@ -108,14 +110,22 @@ public class DownloadHandler : MonoBehaviour
             imageDownloaded = false;
             imageDownloadedSuccessful = false;
             StartCoroutine(GetTexture(mainScreen.backgroundURL, mainScreen.backgroundImageID));
+            while (!imageDownloaded)
+            {
+                yield return null;
+            }
         }
         foreach(MainScreen.MainScreenButton button in mainScreen.mainScreenButtons)
         {
-            if (!imageHandler.GetImage(button.spriteID))
+            if (button.spriteURL != "spriteURL" && !imageHandler.GetImage(button.spriteID))
             {
                 imageDownloaded = false;
                 imageDownloadedSuccessful = false;
                 StartCoroutine(GetTexture(button.spriteURL, button.spriteID));
+                while (!imageDownloaded)
+                {
+                    yield return null;
+                }
             }
         }
         imagesDownloaded = true;

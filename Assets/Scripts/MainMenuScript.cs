@@ -14,6 +14,8 @@ public class MainMenuScript : MonoBehaviour
     public string formsURL = "https://forms.gle/TcwJZwNFUmNhY2pd9";
     public GameObject phoneCanvas;
     public GameObject ipadCanvas;
+    public GameObject phoneLoadingCircle;
+    public GameObject ipadLoadingCircle;
     public Button iphoneEnter;
     public Button ipadEnter;
     public DownloadHandler downloadHandler;
@@ -32,12 +34,14 @@ public class MainMenuScript : MonoBehaviour
             phoneCanvas.SetActive(false);
             ipadCanvas.SetActive(true);
             downloadHandler.startButton = ipadEnter.gameObject;
+            downloadHandler.loadingCircle = ipadLoadingCircle;
         }
         else
         {
             phoneCanvas.SetActive(true);
             ipadCanvas.SetActive(false);
             downloadHandler.startButton = iphoneEnter.gameObject;
+            downloadHandler.loadingCircle = phoneLoadingCircle;
         }
         downloadHandler.StartDownloading();
     }
