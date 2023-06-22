@@ -12,13 +12,18 @@ public class Requirements : MonoBehaviour
     //public TextAsset data;
     public List<Requirement> requirementsList = new List<Requirement>();
 
+
     /// <summary>
     /// Reads the data in the Requirements.tsv file, and places them in the "requirements" list, line by line.
     /// </summary>
     /// <param name="rank"></param>
     public void ReadData(Requirement.Rank rank)
     {
+        //only clear and rewrite the requirements list if there is internet.
+        //if(InternetAvailability.IsConnectedToInternet() == true)
+        //{
         requirementsList.Clear();
+        //}
         string relativePathToData;
         if(Application.isEditor)
         {

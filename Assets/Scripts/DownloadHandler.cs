@@ -23,11 +23,18 @@ public class DownloadHandler : MonoBehaviour
     public GameObject startButton;
     public void StartDownloading()
     {
-        //StartCoroutine(GetTexture("https://upload.wikimedia.org/wikipedia/commons/6/6e/Nf_knots.png"));
-        //Do later: Add loading thingy
-        startButton.SetActive(false);
-        loadingCircle.SetActive(true);
-        StartCoroutine(StartDownload());
+        //check to see if there's internet. if there is internet, download stuff. if there isn't, don't download.
+        if(InternetAvailability.IsConnectedToInternet() == true)
+        {
+            startButton.SetActive(false);
+            loadingCircle.SetActive(true);
+            StartCoroutine(StartDownload());
+        }
+        else
+        {
+            startButton.SetActive(true);
+            loadingCircle.SetActive(false);
+        }
 
     }
 

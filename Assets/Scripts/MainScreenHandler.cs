@@ -21,8 +21,6 @@ public class MainScreenHandler : MonoBehaviour
         SetUpButtons(starButton, mainScreen.mainScreenButtons[4]);
         SetUpButtons(lifeButton, mainScreen.mainScreenButtons[5]);
         SetUpButtons(eagleButton, mainScreen.mainScreenButtons[6]);
-        
-
     }
 
     void SetUpButtons(Button button, MainScreen.MainScreenButton buttonInfo)
