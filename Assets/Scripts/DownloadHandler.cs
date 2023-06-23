@@ -21,6 +21,10 @@ public class DownloadHandler : MonoBehaviour
 
     public GameObject loadingCircle;
     public GameObject startButton;
+
+    /// <summary>
+    /// Checks if there is internet. If there isn't internet, don't download shid. If there is internet, download stuff.
+    /// </summary>
     public void StartDownloading()
     {
         //check to see if there's internet. if there is internet, download stuff. if there isn't, don't download.
@@ -35,32 +39,43 @@ public class DownloadHandler : MonoBehaviour
             startButton.SetActive(true);
             loadingCircle.SetActive(false);
         }
-
+        
     }
 
-
+    /// <summary>
+    /// <b>COROUTINE</b>
+    /// Downloads the necessary files (aka the requirements)
+    /// </summary>
     IEnumerator StartDownload()
     {
         downloadStart = Time.time;
         StartCoroutine(DownloadFile(url, requirementsFileName));
-        StartCoroutine(DownloadFile(urlMeritBadge, meritBadgesFileName));
-        StartCoroutine(DownloadFile(urlMainScreenData, mainScreenFileName));
-        while (maxDownloadWait + downloadStart> Time.time && downloadCompleteCounter < 3)
+        //StartCoroutine(DownloadFile(urlMeritBadge, meritBadgesFileName));
+        //StartCoroutine(DownloadFile(urlMainScreenData, mainScreenFileName));
+        while (maxDownloadWait + downloadStart > Time.time && downloadCompleteCounter < 3)
         {
             yield return null;
         }
 
+        
         StartCoroutine(DownloadImages());
         while (!imagesDownloaded)
         {
             yield return null;
         }
+        
+
         loadingCircle.SetActive(false);
         startButton.SetActive(true);
     }
 
-
-
+    
+    /// <summary>
+    /// Downloads a singular file based on the URL given. Saves the file to the desired place.
+    /// </summary>
+    /// <param name="url"></param>
+    /// <param name="fileName"></param>
+    /// <returns></returns>
     public IEnumerator DownloadFile(string url, string fileName)
     {
         var uwr = new UnityWebRequest(url, UnityWebRequest.kHttpVerbGET);
@@ -93,6 +108,10 @@ public class DownloadHandler : MonoBehaviour
     bool imagesDownloaded = false;
     bool imageDownloaded = false;
     bool imageDownloadedSuccessful = false;
+    /// <summary>
+    /// Downloads images (yeah)
+    /// </summary>
+    /// <returns></returns>
     IEnumerator DownloadImages()
     {
         for (int i = 0; i < 7; i += 1)
@@ -110,6 +129,9 @@ public class DownloadHandler : MonoBehaviour
                 }
             }
         }
+
+
+        /*
         //download buttons for main screen
         MainScreen mainScreen = new MainScreen(Utility.GetScreenRatio());
         if (!imageHandler.GetImage(mainScreen.backgroundImageID))
@@ -135,6 +157,9 @@ public class DownloadHandler : MonoBehaviour
                 }
             }
         }
+        */
+
+
         imagesDownloaded = true;
     }
 

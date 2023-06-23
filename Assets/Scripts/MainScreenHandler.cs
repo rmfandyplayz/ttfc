@@ -9,6 +9,7 @@ public class MainScreenHandler : MonoBehaviour
     public Button scoutButton, tenderfootButton, secondClassButton, firstClassButton, starButton, lifeButton, eagleButton;
     public ImageHandler imageHandler;
 
+    /*
     private void Start()
     {
         MainScreen mainScreen = new MainScreen(Utility.GetScreenRatio());
@@ -22,6 +23,7 @@ public class MainScreenHandler : MonoBehaviour
         SetUpButtons(lifeButton, mainScreen.mainScreenButtons[5]);
         SetUpButtons(eagleButton, mainScreen.mainScreenButtons[6]);
     }
+    */
 
     void SetUpButtons(Button button, MainScreen.MainScreenButton buttonInfo)
     {

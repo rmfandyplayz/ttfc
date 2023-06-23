@@ -9,7 +9,7 @@ public class DownloadImage : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(DownloadImageFromURL());
+        //StartCoroutine(DownloadImageFromURL());
     }
 
     IEnumerator DownloadImageFromURL()
