@@ -1,3 +1,1 @@
-i dont know how you stumbled into the code for this project but i guess ur here
-
-just... don't do shady stuff with it please.
+no steal code!!!!111!1 >:C
