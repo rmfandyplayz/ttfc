@@ -128,6 +128,7 @@ PlayerSettings:
   vulkanEnablePreTransform: 0
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
+<<<<<<< Updated upstream
   m_SupportedAspectRatios:
     4:3: 1
     5:4: 1
@@ -135,6 +136,10 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0.2
+=======
+  loadStoreDebugModeEnabled: 0
+  bundleVersion: 2.0.0
+>>>>>>> Stashed changes
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -231,7 +236,7 @@ PlayerSettings:
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
-  appleEnableProMotion: 0
+  appleEnableProMotion: 1
   shaderPrecisionModel: 0
   clonedFromGUID: 10ad67313f4034357812315f3c407484
   templatePackageId: com.unity.template.2d@5.0.0
@@ -279,31 +284,6 @@ PlayerSettings:
   - m_BuildTarget: iPhone
     m_Icons:
     - m_Textures: []
-      m_Width: 180
-      m_Height: 180
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 120
-      m_Height: 120
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures: []
-      m_Width: 167
-      m_Height: 167
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 152
-      m_Height: 152
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 76
-      m_Height: 76
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
       m_Width: 120
       m_Height: 120
       m_Kind: 3
@@ -322,6 +302,36 @@ PlayerSettings:
       m_Width: 40
       m_Height: 40
       m_Kind: 3
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 180
+      m_Height: 180
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 167
+      m_Height: 167
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 152
+      m_Height: 152
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 76
+      m_Height: 76
+      m_Kind: 0
       m_SubKind: iPad
     - m_Textures: []
       m_Width: 87

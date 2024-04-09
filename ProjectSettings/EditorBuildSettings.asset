@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/_OLD/Scenes/Main Menu.unity
     guid: a8c48dfead29e594883cb427498910f2
   - enabled: 1
-    path: Assets/Scenes/Welcome Screen.unity
+    path: Assets/_OLD/Scenes/Welcome Screen.unity
     guid: e6a5e6a32bfa3d7469898bc82a5693dd
   - enabled: 1
-    path: Assets/Scenes/Main Screen.unity
+    path: Assets/_OLD/Scenes/Main Screen.unity
     guid: 46758290f24863a42a6dc8c5283614e4
   - enabled: 1
-    path: Assets/Scenes/Test Scene.unity
+    path: Assets/_OLD/Scenes/Test Scene.unity
     guid: f1a0fc99aa53e7147825cde9c41dc837
   - enabled: 1
-    path: Assets/Scenes/Requirement Select Screen.unity
+    path: Assets/_OLD/Scenes/Requirement Select Screen.unity
     guid: 361bb8e07b0c90643aa4ac088f9c01a6
   - enabled: 1
-    path: Assets/Scenes/MeritBadgeList.unity
+    path: Assets/_OLD/Scenes/MeritBadgeList.unity
     guid: ce7e2dca0be62ca4d99c93b0d56baa42
   - enabled: 1
-    path: Assets/Scenes/Requirement Select Screen Phone Version.unity
+    path: Assets/_OLD/Scenes/Requirement Select Screen Phone Version.unity
     guid: 9341565f387b76746addb4be204c9dc0
   - enabled: 1
-    path: Assets/Scenes/Main Screen Phone Version.unity
+    path: Assets/_OLD/Scenes/Main Screen Phone Version.unity
     guid: 497c8b0f40c633b4b9174018c0cec7d1
   m_configObjects: {}
