@@ -22,5 +22,4 @@ public class _GLOBALSETTINGS : MonoBehaviour
     public static bool displayHasNotch;
     //is the app running on an iPhone that has a notch? aka is it an iPhone X or above?
 
-
 }
