@@ -6,22 +6,48 @@ using UnityEngine.Events;
 
 public class UpdateChecker : MonoBehaviour
 {
+    [SerializeField] Canvas checkVersionUpdateCanvas;
+    [SerializeField] Canvas outOfDateCanvas;
+    [SerializeField] Canvas noInternetCanvas;
+
     string versionURL = "https://version.ttfc.zip";
     bool? isOutdated;
-
-    public UnityEvent<bool> OnVersionCheckComplete = new UnityEvent<bool>();
+    UnityEvent<bool> OnVersionCheckComplete = new UnityEvent<bool>();
 
     private void Start()
     {
-        if(InternetAvailability.IsConnectedToInternet() == true)
+        if (InternetAvailability.IsConnectedToInternet() == true)
         {
+
+            OnVersionCheckComplete.AddListener(HandleVersionCheckComplete);
+
             StartCoroutine(AccessVersionURL());
         }
         else
         {
-            //not connected to internet prompt thing
-            //put it here later lol
+            Debug.LogWarning("No internet connection");
+            checkVersionUpdateCanvas.gameObject.SetActive(false);
+            noInternetCanvas.gameObject.SetActive(true);
+            //todo: put procedures for no internet connection
         }
+    }
+
+    //called when version check is complete - not meant to be called otherwise
+    void HandleVersionCheckComplete(bool isOutdated)
+    {
+        if (isOutdated)
+        {
+            Debug.LogWarning("App is outdated!");
+            checkVersionUpdateCanvas.gameObject.SetActive(false);
+            outOfDateCanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("App is up to date!");
+            //todo: proceed to next scene
+        }
+
+        OnVersionCheckComplete.RemoveListener(HandleVersionCheckComplete); //unsubscribe to event
     }
 
     /// <summary>
