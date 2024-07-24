@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/General/Download Scene.unity
     guid: 8283430c72b75884e9d3ff8dbb6c860c
   - enabled: 1
+    path: Assets/Scenes/InitializationScenes/Tablet [TB]/TB2_LanguageMode.unity
+    guid: 09ff363aa769f474db276484bd977cc1
+  - enabled: 1
+    path: Assets/Scenes/InitializationScenes/Phone [PH]/PH2_LanguageMode.unity
+    guid: a018ebdfbe6adfe4b8ef84d0142e7d0d
+  - enabled: 1
     path: Assets/Scenes/Test Scenes/Test Scene.unity
     guid: 9bd0961dedf97ca45b05f00229f05fc9
   m_configObjects: {}

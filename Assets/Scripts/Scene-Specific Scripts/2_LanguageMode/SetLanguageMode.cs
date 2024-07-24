@@ -1,50 +1,35 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// this script basically takes care of all the logic in the scene "1_CheckScreenResolution"
+/// Handles the logic for the scenes 2_LanguageMode (both iPad and iPhone)
 /// 
 /// Written by Andy (rmfandyplayz)
 /// </summary>
-public class CheckScreenRes : MonoBehaviour
+public class SetLanguageMode : MonoBehaviour
 {
     [SerializeField] Image transitionPanel;
-    [SerializeField] GameObject phonePanel;
-    [SerializeField] GameObject tabletPanel;
-
 
     private void Start()
     {
-        //set panel activation based on screen ratio
-        if(Screen.width > Screen.height) //tablet
-        {
-            Debug.Log("Tablet detected");
-            tabletPanel.SetActive(true);
-        }
-        else //phone
-        {
-            Debug.Log("Phone detected");
-            phonePanel.SetActive(true);
-        }
-
-
         StartCoroutine(FadeOutPanel());
     }
 
-    //follows the same pattern as global settings - 0 for phone, 1 for tablet
-    public void SelectOption(int deviceMode)
+    public void SetLangMode(int languageMode)
     {
-        if(deviceMode == 0 || deviceMode == 1)
+        if(languageMode == 0 || languageMode == 1)
         {
-            _GLOBALSETTINGS.deviceMode = deviceMode;
+            _GLOBALSETTINGS.languageMode = languageMode;
             _GLOBALSETTINGS.SaveSettings();
-            Debug.Log($"Display mode set to {(deviceMode == 0 ? "Phone" : "Tablet")}");
+            Debug.Log($"Language mode set to {(languageMode == 0 ? "Regular English" : "Skibidi Speak")}");
             StartCoroutine(FadeInPanel());
         }
         else
         {
-            Debug.LogError("[CheckScreenRes.cs] incorrect input!");
+            Debug.Log("[SetLanguageMode.cs] Invalid input!");
         }
     }
 
@@ -64,7 +49,7 @@ public class CheckScreenRes : MonoBehaviour
         }
         tempColor.a = 1;
         transitionPanel.color = tempColor;
-        SwitchSceneManager.SwitchScenes("2_LanguageMode");
+        SceneManager.LoadScene("Test Scene"); //change later to SwitchSceneManager
     }
 
     //alpha goes from 1 to 0 (opaque to transparent)
@@ -85,7 +70,4 @@ public class CheckScreenRes : MonoBehaviour
         transitionPanel.color = tempColor;
         transitionPanel.gameObject.SetActive(false);
     }
-
-
-
 }

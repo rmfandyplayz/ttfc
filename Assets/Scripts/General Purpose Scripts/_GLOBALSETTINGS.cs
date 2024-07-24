@@ -24,6 +24,11 @@ public class _GLOBALSETTINGS : MonoBehaviour
     //0 = phone
     //1 = tablet
 
+    public static int appearanceMode; //NOT IMPLEMENTED YET
+    //THIS MAY OR MAY NOT BE IMPLEMENTED LATER!!!
+    //0 = dark mode
+    //1 = discord light mode (burns your eyes)
+
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
