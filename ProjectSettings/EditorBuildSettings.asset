@@ -12,17 +12,23 @@ EditorBuildSettings:
     path: Assets/Scenes/InitializationScenes/1_CheckScreenResolution.unity
     guid: 75eb5cfc541741f42afa946c0b13fa49
   - enabled: 1
-    path: Assets/Scenes/General/Check Updates Scene.unity
-    guid: 3a5a9db293418c24499734cf170b397e
-  - enabled: 1
-    path: Assets/Scenes/General/Download Scene.unity
-    guid: 8283430c72b75884e9d3ff8dbb6c860c
-  - enabled: 1
     path: Assets/Scenes/InitializationScenes/Tablet [TB]/TB2_LanguageMode.unity
     guid: 09ff363aa769f474db276484bd977cc1
   - enabled: 1
     path: Assets/Scenes/InitializationScenes/Phone [PH]/PH2_LanguageMode.unity
     guid: a018ebdfbe6adfe4b8ef84d0142e7d0d
+  - enabled: 1
+    path: Assets/Scenes/InitializationScenes/Phone [PH]/PH3_TextSize.unity
+    guid: bafe0b16b45823c41b3d023de7e021d8
+  - enabled: 1
+    path: Assets/Scenes/InitializationScenes/Tablet [TB]/TB3_TextSize.unity
+    guid: f2c3b77aaf3dc2040a8fac6aa9904677
+  - enabled: 1
+    path: Assets/Scenes/General/Check Updates Scene.unity
+    guid: 3a5a9db293418c24499734cf170b397e
+  - enabled: 1
+    path: Assets/Scenes/General/Download Scene.unity
+    guid: 8283430c72b75884e9d3ff8dbb6c860c
   - enabled: 1
     path: Assets/Scenes/Test Scenes/Test Scene.unity
     guid: 9bd0961dedf97ca45b05f00229f05fc9

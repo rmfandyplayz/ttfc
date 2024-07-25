@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 /// also the place to load and save such information
 /// THIS SCRIPT SHOULD ALWAYS BE THE FIRST THING TO RUN WHEN THE APP LOADS!
 /// 
-/// written by Andy (rmfandyplayz)
+/// Written by Andy (rmfandyplayz)
 /// </summary>
 public class _GLOBALSETTINGS : MonoBehaviour
 {
-    public static int fontSize;
+    public static int fontSizeModifier;
+    //adjusts how much bigger/smaller the fonts get
     //KEEP IN MIND FOR FUTURE:
     //this value can be adjusted to a non-zero and non-negative number, but do have recommended values!
 
@@ -51,7 +52,7 @@ public class _GLOBALSETTINGS : MonoBehaviour
     void LoadSettings()
     {
         //for these, the second value is the default value it will fallback to!
-        fontSize = PlayerPrefs.GetInt("FontSize", 14);
+        fontSizeModifier = PlayerPrefs.GetInt("FontSize", 14);
         languageMode = PlayerPrefs.GetInt("LanguageMode", 0);
         deviceMode = PlayerPrefs.GetInt("DeviceMode", 0);
         //add more if necessary
@@ -65,7 +66,7 @@ public class _GLOBALSETTINGS : MonoBehaviour
     /// </summary>
     public static void SaveSettings()
     {
-        PlayerPrefs.SetInt("FontSize", fontSize);
+        PlayerPrefs.SetInt("FontSize", fontSizeModifier);
         PlayerPrefs.SetInt("LanguageMode", languageMode);
         PlayerPrefs.SetInt("DeviceMode", deviceMode);
         //add more if necessary
@@ -81,7 +82,7 @@ public class _GLOBALSETTINGS : MonoBehaviour
     {
         Debug.Log("Settings: ");
         Debug.Log("Finished App Intro: " + (completedAppIntro == 0 ? "no" : "yes"));
-        Debug.Log("Font Size: " + fontSize);
+        Debug.Log("Font Size: " + fontSizeModifier);
         Debug.Log("Language Mode: " + languageMode);
         Debug.Log("DeviceMode: " + deviceMode);
         //add more if necessary

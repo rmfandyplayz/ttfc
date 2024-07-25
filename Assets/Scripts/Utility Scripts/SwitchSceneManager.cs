@@ -7,6 +7,8 @@ public class SwitchSceneManager : MonoBehaviour
 {
     /// <summary>
     /// Dedicated scene switcher for TTFC - switches to the correct scene based on deviceMode from global settings
+    /// 
+    /// Written by Andy (rmfandyplayz)
     /// </summary>
     /// <param name="sceneName"></param>
     public static void SwitchScenes(string sceneName)

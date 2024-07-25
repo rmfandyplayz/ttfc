@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 139116544}
   - component: {fileID: 139116543}
   m_Layer: 0
-  m_Name: SetLanguageMode
+  m_Name: '[SCRIPT] SetLanguageMode'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.06359863, y: 0.047729492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &915727681
