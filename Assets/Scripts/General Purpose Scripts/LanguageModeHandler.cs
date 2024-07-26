@@ -12,41 +12,44 @@ using UnityEngine;
 public class LanguageModeHandler : MonoBehaviour
 {
 
-    static List<TextMeshProUGUI> textList;
-    static string divider = "*-=-=-=-=-*"; //the divider that will separate the normal english/skibidi speak
+	static List<TextMeshProUGUI> textList;
+	static string divider = "*-=-=-=-=-*"; //the divider that will separate the normal english/skibidi speak
 
-    private void Start()
-    {
-        TextMeshProUGUI[] tempList = FindObjectsOfType<TextMeshProUGUI>();
-        textList = new List<TextMeshProUGUI>(tempList);
-    }
+	private void Start()
+	{
+		TextMeshProUGUI[] tempList = FindObjectsOfType<TextMeshProUGUI>();
+		textList = new List<TextMeshProUGUI>(tempList);
+	}
 
-    /// <summary>
-    /// Run this along with initialization scenes.
-    /// Similarly to TextSizeHandler's function, it modifies all the applicable text within the scene to display the correct language type.
-    /// </summary>
-    public static void ApplyLanguageChoice()
-    {
-        foreach(TextMeshProUGUI text in textList)
-        {
-            string originalText = text.text;
-            string cleanedText = originalText.Replace("\n", "").Replace("\r", ""); //remove newlines
-            string[] splitText = cleanedText.Split(divider);
+	/// <summary>
+	/// Run this along with initialization scenes.
+	/// Similarly to TextSizeHandler's function, it modifies all the applicable text within the scene to display the correct language type.
+	/// </summary>
+	public static void ApplyLanguageChoice()
+	{
+		foreach(TextMeshProUGUI text in textList)
+		{
+			if(text.text.Contains(divider)) //if the text does not contain the divider, it will be ignored.
+			{
+				string originalText = text.text;
+				string cleanedText = originalText.Replace("\n", "").Replace("\r", ""); //remove newlines
+				string[] splitText = cleanedText.Split(divider);
 
-            if (_GLOBALSETTINGS.languageMode == 0) //normal english
-            {
-                if (splitText.Length > 0)
-                {
-                    text.text = splitText[0];
-                }
-            }
-            else if (_GLOBALSETTINGS.languageMode == 1) //skibidi speak
-            {
-                if (splitText.Length > 1)
-                {
-                    text.text = splitText[1];
-                }
-            }
-        }
-    }
+				if (_GLOBALSETTINGS.languageMode == 0) //normal english
+				{
+					if (splitText.Length > 0)
+					{
+						text.text = splitText[0];
+					}
+				}
+				else if (_GLOBALSETTINGS.languageMode == 1) //skibidi speak
+				{
+					if (splitText.Length > 1)
+					{
+						text.text = splitText[1];
+					}
+				}
+			}
+		}
+	}
 }
