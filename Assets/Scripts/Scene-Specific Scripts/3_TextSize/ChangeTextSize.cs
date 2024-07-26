@@ -16,7 +16,6 @@ public class ChangeTextSize : MonoBehaviour
 {
 	int textSizeModifier;
 	int originalTextSize;
-	int newTextSize;
 	[SerializeField] Slider textSizeSlider;
 	[SerializeField] TMP_InputField textSizeInputField;
 	[SerializeField] Image transitionPanel;
@@ -26,23 +25,32 @@ public class ChangeTextSize : MonoBehaviour
 	{
 		originalTextSize = (int) exampleText.fontSize;
 		LanguageModeHandler.ApplyLanguageChoice();
-		FadeOutPanel();
+		StartCoroutine(FadeOutPanel());
 	}
 	
 	//runs when the slider is changed
 	public void SetTextSizeModifierFromSlider()
 	{
-		exampleText.fontSize = originalTextSize + (int) textSizeSlider.value;
-		textSizeInputField.text = "";
-		newTextSize = (int) exampleText.fontSize;
-	}
-	
-	//runs when the text input is changed
-	public void SetTextSizeModifierFromTextField()
+        exampleText.fontSize = originalTextSize + (int) textSizeSlider.value;
+		textSizeModifier = (int) textSizeSlider.value;
+        //textSizeInputField.text = (originalTextSize + (int)textSizeSlider.value).ToString();
+    }
+
+    //runs when the text input is changed
+    public void SetTextSizeModifierFromTextField()
 	{
-		exampleText.fontSize = originalTextSize + int.Parse(textSizeInputField.text);
 		textSizeSlider.value = 0;
-		newTextSize = (int) exampleText.fontSize;
+        exampleText.fontSize = originalTextSize + int.Parse(textSizeInputField.text.Trim());
+		textSizeModifier = int.Parse(textSizeInputField.text.Trim()) - originalTextSize;
+    }
+
+	//runs when the user confirms their final choice
+	public void ConfirmTextSizeModifier()
+	{
+		_GLOBALSETTINGS.fontSizeModifier = textSizeModifier;
+		_GLOBALSETTINGS.SaveSettings();
+		Debug.Log($"Text size modifier set to {textSizeModifier}");
+		StartCoroutine(FadeInPanel());
 	}
 
 
