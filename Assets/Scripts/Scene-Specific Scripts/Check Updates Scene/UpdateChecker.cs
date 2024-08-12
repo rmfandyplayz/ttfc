@@ -13,7 +13,7 @@ public class UpdateChecker : MonoBehaviour
 
     private void Start()
     {
-        if(InternetAvailability.IsConnectedToInternet() == true)
+        if(CheckWifi.connectedToInternet == true)
         {
             StartCoroutine(AccessVersionURL());
         }
